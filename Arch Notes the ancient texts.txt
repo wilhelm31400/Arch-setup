@@ -70,3 +70,6 @@ flatpak install flathub com.github.tchx84.Flatseal
 flatpak install flathub org.bleachbit.BleachBit
 flatpak install flathub com.discordapp.Discord
 
+GITHUB Repository
+https://github.com/wilhelm31400/mein_conf
+https://github.com/wilhelm31400/Arch-setup

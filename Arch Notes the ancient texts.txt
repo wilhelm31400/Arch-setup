@@ -1,0 +1,72 @@
+git yay#UPDATE AND UPGRADE
+sudo pacman -Syyu linux-firmware
+
+#INSTALL THE RIGHT VERSION OF KDE PLASMA
+sudo pacman -S plasma
+
+
+#NETWORKMANAGER
+sudo systemctl enable NetworkManager.service
+sudo systemctl start NetworkManager.service
+
+#BLUETOOTH
+sudo pacman -Syu linux linux-firmware bluez bluez-utils
+
+#Get GIT
+sudo pacman -S git base-devel
+
+#YAY
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+
+#Fastpak
+sudo pacman -S flatpak
+
+#LIBREWOLF
+yay -S librewolf-bin
+
+#INSTALL DESKTOP INTEGRATION PACKAGES
+sudo pacman -S xdg-desktop-portal xdg-desktop-portal-gtk
+sudo pacman -S gnome-keyring
+sudo pacman -S xdg-desktop-portal-kde
+
+#ESSENTIALS
+sudo pacman -S networkmanager network-manager-applet dialog wpa_supplicant
+sudo pacman -S dhcpcd inetutils dnsutils
+sudo pacman -S --needed base-devel git wget curl vim nano htop
+sudo pacman -S pipewire pipewire-pulse pipewire-alsa pipewire-jack wireplumber
+sudo pacman -S mesa vulkan-radeon libva-mesa-driver libva-utils
+sudo pacman -S unzip unrar p7zip zip
+sudo pacman -S reflector
+sudo pacman -S fastfetch
+
+
+#JAVA
+sudo pacman -S jre-openjdk
+
+#LM SENSORS
+sudo pacman -S lm_sensors
+sudo sensors-detect   # accept defaults
+
+#KITTY
+ #install it
+sudo pacman -S kitty
+ #makes it default
+kcmshell6 componentchooser
+
+#FIREWALL
+sudo pacman -S ufw
+sudo ufw enable
+sudo systemctl enable ufw.service
+
+#OPTIONAL EXTRAS
+ #yay
+yay -S lact
+sudo systemctl enable --now lactd
+
+  #Flatpak
+flatpak install flathub com.github.tchx84.Flatseal
+flatpak install flathub org.bleachbit.BleachBit
+flatpak install flathub com.discordapp.Discord
+
